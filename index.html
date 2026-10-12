@@ -13,7 +13,7 @@
 
 body {
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: Georgia, "Times New Roman", serif;
     background: linear-gradient(135deg, #fff0f3, #ffe0e9, #fff5f7);
     color: #593642;
     text-align: center;
@@ -24,8 +24,8 @@ body {
 .container {
     width: 92%;
     max-width: 650px;
-    margin: 45px auto;
-    padding: 25px 0 50px;
+    margin: 35px auto;
+    padding: 20px 0 50px;
 }
 
 .heart {
@@ -49,7 +49,7 @@ p {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.88);
     padding: 28px 23px;
     border-radius: 22px;
     box-shadow: 0 8px 30px rgba(170, 75, 105, 0.13);
@@ -76,16 +76,18 @@ button {
 
 button:hover {
     background: #a9365c;
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
 
-button:active {
-    transform: scale(0.98);
+button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
 }
 
 .page {
     display: none;
-    animation: fadeIn 0.8s ease;
+    animation: fadeIn 0.6s ease;
 }
 
 .page.active {
@@ -108,34 +110,30 @@ button:active {
     opacity: 0.8;
 }
 
-/* Romantic song section */
+/* Song card */
 .music-section {
     margin: 25px auto;
-    padding: 22px 12px;
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(201, 79, 117, 0.2);
+    padding: 22px 14px;
+    background: linear-gradient(135deg, #fff0f5, #ffe3ec);
+    border: 1px solid #f5c6d5;
     border-radius: 22px;
-    box-shadow: 0 6px 20px rgba(170, 75, 105, 0.08);
 }
 
-.music-section p {
-    color: #bd4568;
+.music-icon {
+    font-size: 38px;
 }
 
 .music-button {
     background: linear-gradient(135deg, #d85b82, #b83c65);
+    min-width: 210px;
     box-shadow: 0 5px 15px rgba(189, 69, 104, 0.2);
-    min-width: 205px;
-}
-
-.music-button:hover {
-    background: linear-gradient(135deg, #c94f75, #a9365c);
 }
 
 #musicStatus {
     font-size: 13px;
     color: #a64b68;
     margin-top: 12px;
+    overflow-wrap: anywhere;
 }
 
 .heart-float {
@@ -148,13 +146,8 @@ button:active {
 }
 
 @keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
 }
 
 @keyframes fadeIn {
@@ -162,7 +155,6 @@ button:active {
         opacity: 0;
         transform: translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -174,7 +166,6 @@ button:active {
         transform: translateY(0) rotate(0deg);
         opacity: 0.8;
     }
-
     to {
         transform: translateY(-110vh) rotate(30deg);
         opacity: 0;
@@ -183,8 +174,7 @@ button:active {
 
 @media (max-width: 480px) {
     .container {
-        margin: 25px auto;
-        padding-top: 15px;
+        margin: 20px auto;
     }
 
     .card {
@@ -193,10 +183,6 @@ button:active {
 
     p {
         font-size: 16px;
-    }
-
-    button {
-        max-width: 100%;
     }
 }
 </style>
@@ -239,7 +225,7 @@ button:active {
     </section>
 
 
-    <!-- PAGE 2: A LITTLE NOTICE -->
+    <!-- PAGE 2: NOTICE -->
     <section class="page" id="page2">
 
         <div class="heart">🥹💗</div>
@@ -248,9 +234,7 @@ button:active {
 
         <div class="card center">
 
-            <p>
-                <b>Official Notice for My Landmine</b> 📜
-            </p>
+            <p><b>Official Notice for My Landmine</b> 📜</p>
 
             <p>
                 Aapko officially inform kiya jaata hai
@@ -276,7 +260,7 @@ button:active {
     </section>
 
 
-    <!-- PAGE 3: FROM MY HEART + SONG -->
+    <!-- PAGE 3: HEART + SONG -->
     <section class="page" id="page3">
 
         <div class="heart">🫂</div>
@@ -303,27 +287,24 @@ button:active {
                 </b> ❤️
             </p>
 
-            <!-- SONG BUTTON BEFORE THE APOLOGY LETTER -->
+            <!-- SONG PLAYER -->
             <div class="music-section">
 
-                <div style="font-size:35px; margin-bottom:8px;">
-                    🎶
-                </div>
+                <div class="music-icon">🎶💗</div>
 
-                <h2 style="margin-top:0;">
-                    A Little Song for You ❤️
-                </h2>
+                <h2>A Little Song for You</h2>
 
                 <p>
                     Before you read my letter, jaan... 🥹
                 </p>
 
                 <p style="font-size:14px;">
-                    I want you to listen to this little song.
-                    It's just for you, my Landmine. 💗
+                    This song reminds me of you.
+                    Listen to it, my Landmine. ❤️
                 </p>
 
                 <button
+                    type="button"
                     id="ourSongButton"
                     class="music-button"
                     onclick="playOurSong()">
@@ -331,19 +312,17 @@ button:active {
                 </button>
 
                 <p id="musicStatus" aria-live="polite">
-                    Made with love, just for you. 🫶🏻
+                    Just for you, my love. 🫶🏻
                 </p>
 
-                <audio id="ourSong" preload="metadata">
-                    <source src="samjhawan.mp3" type="audio/mpeg">
+                <audio id="ourSong" preload="none">
+                    <source src="./samjhawan.mp3" type="audio/mpeg">
                     Your browser does not support audio playback.
                 </audio>
 
             </div>
 
-            <p>
-                Jab ready ho, jaan... ❤️
-            </p>
+            <p>Jab ready ho, jaan... ❤️</p>
 
             <button onclick="showPage('page4')">
                 Read My Letter, Jaan 💌
@@ -353,7 +332,7 @@ button:active {
     </section>
 
 
-    <!-- PAGE 4: YOUR PERSONAL APOLOGY LETTER -->
+    <!-- PAGE 4: APOLOGY LETTER -->
     <section class="page" id="page4">
 
         <div class="heart">💌</div>
@@ -436,16 +415,15 @@ button:active {
         </div>
 
         <div class="center">
-
             <button onclick="showPage('page5')">
                 Come Here, Jaan 🫂
             </button>
-
         </div>
+
     </section>
 
 
-    <!-- PAGE 5: THE FINAL HUG -->
+    <!-- PAGE 5: VIRTUAL HUG -->
     <section class="page" id="page5">
 
         <div class="heart">🫂❤️</div>
@@ -454,9 +432,7 @@ button:active {
 
         <div class="card center">
 
-            <p>
-                Idhar aao, meri jaan. 🥹🫂
-            </p>
+            <p>Idhar aao, meri jaan. 🥹🫂</p>
 
             <p>
                 Kaash abhi aapko ek tight si hug de pata
@@ -493,126 +469,149 @@ button:active {
 
 
 <script>
-let songStartedAtChosenPoint = false;
+const song = document.getElementById("ourSong");
+const songButton = document.getElementById("ourSongButton");
+const musicStatus = document.getElementById("musicStatus");
+
+let startedAt25Seconds = false;
+let loadingSong = false;
 
 
-// PLAY / PAUSE SONG
+// PLAY / PAUSE
 async function playOurSong() {
 
-    const song = document.getElementById('ourSong');
-    const button = document.getElementById('ourSongButton');
-    const status = document.getElementById('musicStatus');
-
-    if (!song.paused) {
-
-        song.pause();
-
-        button.textContent = '🎵 Play Our Song ♡';
-        status.textContent = 'Paused, my love. 💗';
-
+    if (loadingSong) {
         return;
     }
 
+    // Pause if the song is already playing.
+    if (!song.paused) {
+        song.pause();
+        return;
+    }
+
+    loadingSong = true;
+    songButton.disabled = true;
+    musicStatus.textContent = "Loading our song... 🎶";
+
     try {
 
-        // Load audio information if it is not ready.
+        // Wait for the browser to load audio metadata.
         if (song.readyState < 1) {
 
-            status.textContent = 'Getting our song ready... 🎶';
+            await new Promise((resolve, reject) => {
 
-            await new Promise(function(resolve, reject) {
+                let timeout;
 
-                function loaded() {
+                function cleanup() {
+                    clearTimeout(timeout);
+                    song.removeEventListener("loadedmetadata", onLoaded);
+                    song.removeEventListener("error", onError);
+                }
+
+                function onLoaded() {
                     cleanup();
                     resolve();
                 }
 
-                function failed() {
+                function onError() {
                     cleanup();
-                    reject(new Error('Audio could not be loaded.'));
+                    reject(new Error("Could not load the audio file."));
                 }
 
-                function cleanup() {
-                    song.removeEventListener('loadedmetadata', loaded);
-                    song.removeEventListener('error', failed);
-                }
+                song.addEventListener("loadedmetadata", onLoaded);
+                song.addEventListener("error", onError);
 
-                song.addEventListener('loadedmetadata', loaded);
-                song.addEventListener('error', failed);
+                timeout = setTimeout(() => {
+                    cleanup();
+                    reject(new Error("Audio loading timed out."));
+                }, 12000);
 
                 song.load();
+
+                if (song.readyState >= 1) {
+                    cleanup();
+                    resolve();
+                }
+
             });
         }
 
-        // Start at 25 seconds on the first play.
-        if (!songStartedAtChosenPoint) {
+        // Start at 25 seconds on the first successful play.
+        if (!startedAt25Seconds) {
 
-            if (song.duration <= 25) {
-                throw new Error('Audio is too short.');
+            if (!Number.isFinite(song.duration) || song.duration <= 25) {
+                throw new Error("Audio duration is invalid.");
             }
 
             song.currentTime = 25;
-            songStartedAtChosenPoint = true;
         }
 
         await song.play();
 
-        button.textContent = '⏸ Pause Our Song ♡';
-        status.textContent = 'Playing our song, jaan. ❤️';
+        startedAt25Seconds = true;
 
     } catch (error) {
 
-        console.error('Song playback error:', error);
+        console.error("Song error:", error);
 
-        songStartedAtChosenPoint = false;
+        musicStatus.textContent =
+            "Couldn't load the song 🥺 Check the audio file and try again.";
 
-        button.textContent = '🎵 Play Our Song ♡';
+    } finally {
 
-        status.textContent =
-            'Could not play the song. Check the audio filename. 🥺';
+        loadingSong = false;
+        songButton.disabled = false;
+        updateSongButton();
+
     }
 }
 
 
-// RESET BUTTON AFTER SONG ENDS
-document.getElementById('ourSong').addEventListener('ended', function() {
+// KEEP BUTTON TEXT IN SYNC WITH AUDIO
+function updateSongButton() {
 
-    document.getElementById('ourSongButton').textContent =
-        '🎵 Play Our Song ♡';
+    if (!song.paused) {
 
-    document.getElementById('musicStatus').textContent =
-        'Play it again, my love. ❤️';
+        songButton.textContent = "⏸ Pause Our Song ♡";
+        musicStatus.textContent = "Playing our song, jaan. ❤️";
 
-    songStartedAtChosenPoint = false;
+    } else {
+
+        songButton.textContent = "🎵 Play Our Song ♡";
+
+        if (song.ended) {
+            musicStatus.textContent = "Play it again, my love. 💗";
+        }
+    }
+}
+
+song.addEventListener("play", updateSongButton);
+song.addEventListener("pause", updateSongButton);
+
+song.addEventListener("ended", function() {
+    startedAt25Seconds = false;
+    updateSongButton();
 });
 
 
 // NAVIGATE BETWEEN PAGES
 function showPage(pageId) {
 
-    const song = document.getElementById('ourSong');
-
-    // Pause the song whenever the user leaves Page 3.
-    if (song && pageId !== 'page3') {
-
+    // Pause the song when leaving Page 3.
+    if (pageId !== "page3" && !song.paused) {
         song.pause();
-
-        document.getElementById('ourSongButton').textContent =
-            '🎵 Play Our Song ♡';
-
-        document.getElementById('musicStatus').textContent =
-            'Paused, my love. 💗';
     }
 
-    document.querySelectorAll('.page').forEach(function(page) {
-        page.classList.remove('active');
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
     });
 
-    document.getElementById(pageId).classList.add('active');
+    document.getElementById(pageId).classList.add("active");
 
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth"
     });
 }
 
@@ -620,22 +619,22 @@ function showPage(pageId) {
 // FLOATING HEARTS
 function createHeart() {
 
-    const heart = document.createElement('div');
+    const heart = document.createElement("div");
 
-    heart.className = 'heart-float';
+    heart.className = "heart-float";
 
-    const hearts = ['❤️', '💗', '💕', '💖', '🩷', '💞'];
+    const hearts = ["❤️", "💗", "💕", "💖", "🩷", "💞"];
 
     heart.textContent =
         hearts[Math.floor(Math.random() * hearts.length)];
 
-    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.left = Math.random() * 100 + "vw";
 
     heart.style.fontSize =
-        (14 + Math.random() * 18) + 'px';
+        (14 + Math.random() * 18) + "px";
 
     heart.style.animationDuration =
-        (4 + Math.random() * 4) + 's';
+        (4 + Math.random() * 4) + "s";
 
     document.body.appendChild(heart);
 
