@@ -308,6 +308,26 @@ button:hover {
             </div>
 
         </div>
+        <div style="text-align:center; margin-top:25px;"> <p style="color:#bd4568; font-size:16px;"> A little song for you, my Landmine 🥹❤️ </p>
+
+<button onclick="playOurSong()">
+    🎵 Play Our Song ♡
+</button>
+
+<div id="songPlayer" style="display:none; margin-top:15px;">
+    <iframe
+        id="songFrame"
+        width="280"
+        height="158"
+        src=""
+        title="Samjhawan ❤️"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen
+        style="border:0; border-radius:12px; max-width:100%;">
+    </iframe>
+</div>
+
+</div>
 
         <div class="center">
             <button onclick="showPage('page5')">
@@ -396,6 +416,17 @@ function createHeart() {
 }
 
 setInterval(createHeart, 700);
+    function playOurSong() {
+const player = document.getElementById('songPlayer');
+const frame = document.getElementById('songFrame');
+
+player.style.display = 'block';
+
+if (!frame.src || frame.src === window.location.href) {
+    frame.src = 'https://www.youtube.com/embed/H2f7MZaw3Yo?start=25&autoplay=1';
+}
+
+}
 </script>
 
 </body>
