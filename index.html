@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Landmine ❤️</title> 
+
+<title>For My Landmine ❤️</title>
 
 <style>
 * {
@@ -70,11 +71,16 @@ button {
     cursor: pointer;
     margin: 12px 5px 0;
     transition: 0.2s;
+    font-family: inherit;
 }
 
 button:hover {
     background: #a9365c;
     transform: scale(1.04);
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 .page {
@@ -102,6 +108,36 @@ button:hover {
     opacity: 0.8;
 }
 
+/* Romantic song section */
+.music-section {
+    margin: 25px auto;
+    padding: 22px 12px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(201, 79, 117, 0.2);
+    border-radius: 22px;
+    box-shadow: 0 6px 20px rgba(170, 75, 105, 0.08);
+}
+
+.music-section p {
+    color: #bd4568;
+}
+
+.music-button {
+    background: linear-gradient(135deg, #d85b82, #b83c65);
+    box-shadow: 0 5px 15px rgba(189, 69, 104, 0.2);
+    min-width: 205px;
+}
+
+.music-button:hover {
+    background: linear-gradient(135deg, #c94f75, #a9365c);
+}
+
+#musicStatus {
+    font-size: 13px;
+    color: #a64b68;
+    margin-top: 12px;
+}
+
 .heart-float {
     position: fixed;
     bottom: -30px;
@@ -112,18 +148,56 @@ button:hover {
 }
 
 @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes floatUp {
-    from { transform: translateY(0) rotate(0deg); opacity: 0.8; }
-    to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 25px auto;
+        padding-top: 15px;
+    }
+
+    .card {
+        padding: 23px 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        max-width: 100%;
+    }
 }
 </style>
 </head>
@@ -134,6 +208,7 @@ button:hover {
 
     <!-- PAGE 1: WELCOME -->
     <section class="page active" id="page1">
+
         <div class="heart">❤️</div>
 
         <h1>Heyyy, My Landmine!</h1>
@@ -144,6 +219,7 @@ button:hover {
         </p>
 
         <div class="card center">
+
             <h2>Just You & Me 🫶🏻</h2>
 
             <p>
@@ -158,17 +234,20 @@ button:hover {
             <button onclick="showPage('page2')">
                 Open Your Little Surprise 💌
             </button>
+
         </div>
     </section>
 
 
     <!-- PAGE 2: A LITTLE NOTICE -->
     <section class="page" id="page2">
+
         <div class="heart">🥹💗</div>
 
         <h1>Ek Chhota Sa Notice</h1>
 
         <div class="card center">
+
             <p>
                 <b>Official Notice for My Landmine</b> 📜
             </p>
@@ -192,17 +271,20 @@ button:hover {
             <button onclick="showPage('page3')">
                 Read This, Please 🥺
             </button>
+
         </div>
     </section>
 
 
-    <!-- PAGE 3: FROM MY HEART -->
+    <!-- PAGE 3: FROM MY HEART + SONG -->
     <section class="page" id="page3">
+
         <div class="heart">🫂</div>
 
         <h1>From My Heart...</h1>
 
         <div class="card center">
+
             <p>
                 Jokes aur pagalpan se hatkar,
                 aaj main aapse kuch dil ki baatein kehna chahta hoon.
@@ -221,15 +303,59 @@ button:hover {
                 </b> ❤️
             </p>
 
+            <!-- SONG BUTTON BEFORE THE APOLOGY LETTER -->
+            <div class="music-section">
+
+                <div style="font-size:35px; margin-bottom:8px;">
+                    🎶
+                </div>
+
+                <h2 style="margin-top:0;">
+                    A Little Song for You ❤️
+                </h2>
+
+                <p>
+                    Before you read my letter, jaan... 🥹
+                </p>
+
+                <p style="font-size:14px;">
+                    I want you to listen to this little song.
+                    It's just for you, my Landmine. 💗
+                </p>
+
+                <button
+                    id="ourSongButton"
+                    class="music-button"
+                    onclick="playOurSong()">
+                    🎵 Play Our Song ♡
+                </button>
+
+                <p id="musicStatus" aria-live="polite">
+                    Made with love, just for you. 🫶🏻
+                </p>
+
+                <audio id="ourSong" preload="metadata">
+                    <source src="samjhawan.mp3" type="audio/mpeg">
+                    Your browser does not support audio playback.
+                </audio>
+
+            </div>
+
+            <p>
+                Jab ready ho, jaan... ❤️
+            </p>
+
             <button onclick="showPage('page4')">
-                One Last Thing, Jaan 💌
+                Read My Letter, Jaan 💌
             </button>
+
         </div>
     </section>
 
 
-    <!-- PAGE 4: YOUR PERSONAL LETTER -->
+    <!-- PAGE 4: YOUR PERSONAL APOLOGY LETTER -->
     <section class="page" id="page4">
+
         <div class="heart">💌</div>
 
         <h1>A Letter for My Landmine</h1>
@@ -308,37 +434,20 @@ button:hover {
             </div>
 
         </div>
-        <div style="text-align:center; margin-top:25px;"> <p style="color:#bd4568; font-size:16px;"> A little song for you, my Landmine 🥹❤️ </p>
-
-<button onclick="playOurSong()">
-    🎵 Play Our Song ♡
-</button>
-
-<div id="songPlayer" style="display:none; margin-top:15px;">
-    <iframe
-        id="songFrame"
-        width="280"
-        height="158"
-        src=""
-        title="Samjhawan ❤️"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen
-        style="border:0; border-radius:12px; max-width:100%;">
-    </iframe>
-</div>
-
-</div>
 
         <div class="center">
+
             <button onclick="showPage('page5')">
                 Come Here, Jaan 🫂
             </button>
+
         </div>
     </section>
 
 
     <!-- PAGE 5: THE FINAL HUG -->
     <section class="page" id="page5">
+
         <div class="heart">🫂❤️</div>
 
         <h1>A Virtual Hug for You</h1>
@@ -377,12 +486,124 @@ button:hover {
         <p class="small">
             Made with love, just for you. 🥹💌
         </p>
+
     </section>
 
 </div>
 
+
 <script>
+let songStartedAtChosenPoint = false;
+
+
+// PLAY / PAUSE SONG
+async function playOurSong() {
+
+    const song = document.getElementById('ourSong');
+    const button = document.getElementById('ourSongButton');
+    const status = document.getElementById('musicStatus');
+
+    if (!song.paused) {
+
+        song.pause();
+
+        button.textContent = '🎵 Play Our Song ♡';
+        status.textContent = 'Paused, my love. 💗';
+
+        return;
+    }
+
+    try {
+
+        // Load audio information if it is not ready.
+        if (song.readyState < 1) {
+
+            status.textContent = 'Getting our song ready... 🎶';
+
+            await new Promise(function(resolve, reject) {
+
+                function loaded() {
+                    cleanup();
+                    resolve();
+                }
+
+                function failed() {
+                    cleanup();
+                    reject(new Error('Audio could not be loaded.'));
+                }
+
+                function cleanup() {
+                    song.removeEventListener('loadedmetadata', loaded);
+                    song.removeEventListener('error', failed);
+                }
+
+                song.addEventListener('loadedmetadata', loaded);
+                song.addEventListener('error', failed);
+
+                song.load();
+            });
+        }
+
+        // Start at 25 seconds on the first play.
+        if (!songStartedAtChosenPoint) {
+
+            if (song.duration <= 25) {
+                throw new Error('Audio is too short.');
+            }
+
+            song.currentTime = 25;
+            songStartedAtChosenPoint = true;
+        }
+
+        await song.play();
+
+        button.textContent = '⏸ Pause Our Song ♡';
+        status.textContent = 'Playing our song, jaan. ❤️';
+
+    } catch (error) {
+
+        console.error('Song playback error:', error);
+
+        songStartedAtChosenPoint = false;
+
+        button.textContent = '🎵 Play Our Song ♡';
+
+        status.textContent =
+            'Could not play the song. Check the audio filename. 🥺';
+    }
+}
+
+
+// RESET BUTTON AFTER SONG ENDS
+document.getElementById('ourSong').addEventListener('ended', function() {
+
+    document.getElementById('ourSongButton').textContent =
+        '🎵 Play Our Song ♡';
+
+    document.getElementById('musicStatus').textContent =
+        'Play it again, my love. ❤️';
+
+    songStartedAtChosenPoint = false;
+});
+
+
+// NAVIGATE BETWEEN PAGES
 function showPage(pageId) {
+
+    const song = document.getElementById('ourSong');
+
+    // Pause the song whenever the user leaves Page 3.
+    if (song && pageId !== 'page3') {
+
+        song.pause();
+
+        document.getElementById('ourSongButton').textContent =
+            '🎵 Play Our Song ♡';
+
+        document.getElementById('musicStatus').textContent =
+            'Paused, my love. 💗';
+    }
+
     document.querySelectorAll('.page').forEach(function(page) {
         page.classList.remove('active');
     });
@@ -395,18 +616,26 @@ function showPage(pageId) {
     });
 }
 
-// Floating hearts in the background
+
+// FLOATING HEARTS
 function createHeart() {
+
     const heart = document.createElement('div');
 
     heart.className = 'heart-float';
 
     const hearts = ['❤️', '💗', '💕', '💖', '🩷', '💞'];
-    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.textContent =
+        hearts[Math.floor(Math.random() * hearts.length)];
 
     heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (14 + Math.random() * 18) + 'px';
-    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+
+    heart.style.fontSize =
+        (14 + Math.random() * 18) + 'px';
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + 's';
 
     document.body.appendChild(heart);
 
@@ -416,17 +645,7 @@ function createHeart() {
 }
 
 setInterval(createHeart, 700);
-    function playOurSong() {
-const player = document.getElementById('songPlayer');
-const frame = document.getElementById('songFrame');
 
-player.style.display = 'block';
-
-if (!frame.src || frame.src === window.location.href) {
-    frame.src = 'https://www.youtube.com/embed/H2f7MZaw3Yo?start=25&autoplay=1';
-}
-
-}
 </script>
 
 </body>
