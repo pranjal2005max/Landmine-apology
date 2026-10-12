@@ -1,1 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Landmine ❤️</title>
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: linear-gradient(135deg, #fff0f3, #ffe0e9, #fff5f7);
+    color: #593642;
+    text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 92%;
+    max-width: 650px;
+    margin: 45px auto;
+    padding: 25px 0 50px;
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.5s infinite;
+}
+
+h1 {
+    color: #bd4568;
+    font-size: clamp(28px, 7vw, 42px);
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #bd4568;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 28px 23px;
+    border-radius: 22px;
+    box-shadow: 0 8px 30px rgba(170, 75, 105, 0.13);
+    margin-top: 25px;
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    background: #c94f75;
+    color: white;
+    border: none;
+    padding: 14px 23px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 12px 5px 0;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #a9365c;
+    transform: scale(1.04);
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.8s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+.letter p {
+    margin-bottom: 22px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #bd4568;
+    margin-top: 30px;
+}
+
+.small {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.heart-float {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    pointer-events: none;
+    animation: floatUp 6s linear forwards;
+    z-index: -1;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- PAGE 1: WELCOME -->
+    <section class="page active" id="page1">
+        <div class="heart">❤️</div>
+
+        <h1>Heyyy, My Landmine!</h1>
+
+        <p>
+            Mere favourite person ke liye<br>
+            ek chhoti si website. 🥹💗
+        </p>
+
+        <div class="card center">
+            <h2>Just You & Me 🫶🏻</h2>
+
+            <p>
+                Before you go ahead, jaan,<br>
+                bas ek baat yaad rakhna...
+            </p>
+
+            <p>
+                <b>You mean more to me than words can ever explain.</b>
+            </p>
+
+            <button onclick="showPage('page2')">
+                Open Your Little Surprise 💌
+            </button>
+        </div>
+    </section>
+
+
+    <!-- PAGE 2: A LITTLE NOTICE -->
+    <section class="page" id="page2">
+        <div class="heart">🥹💗</div>
+
+        <h1>Ek Chhota Sa Notice</h1>
+
+        <div class="card center">
+            <p>
+                <b>Official Notice for My Landmine</b> 📜
+            </p>
+
+            <p>
+                Aapko officially inform kiya jaata hai
+                ki aapka ek pagal sa insaan aapse
+                bohot pyaar karta hai.
+            </p>
+
+            <p>
+                Unfortunately, iss insaan ko kabhi-kabhi
+                apne emotions handle karne mein problem hoti hai. 😭🤡
+            </p>
+
+            <p>
+                But fortunately, he genuinely wants to
+                become better for you. ❤️
+            </p>
+
+            <button onclick="showPage('page3')">
+                Read This, Please 🥺
+            </button>
+        </div>
+    </section>
+
+
+    <!-- PAGE 3: FROM MY HEART -->
+    <section class="page" id="page3">
+        <div class="heart">🫂</div>
+
+        <h1>From My Heart...</h1>
+
+        <div class="card center">
+            <p>
+                Jokes aur pagalpan se hatkar,
+                aaj main aapse kuch dil ki baatein kehna chahta hoon.
+            </p>
+
+            <p>
+                Main perfect nahi hoon, jaan.
+                Lekin iska matlab yeh nahi ki main better
+                banne ki koshish nahi kar sakta.
+            </p>
+
+            <p>
+                <b>
+                    I don't just want to say that I love you.
+                    I want my actions to make you feel loved, too.
+                </b> ❤️
+            </p>
+
+            <button onclick="showPage('page4')">
+                One Last Thing, Jaan 💌
+            </button>
+        </div>
+    </section>
+
+
+    <!-- PAGE 4: YOUR PERSONAL LETTER -->
+    <section class="page" id="page4">
+        <div class="heart">💌</div>
+
+        <h1>A Letter for My Landmine</h1>
+
+        <div class="card letter">
+
+            <p>Heyyy, meri Landmine. ❤️🥹</p>
+
+            <p>
+                Pta h last night jo bhi hua, uske liye I'm
+                genuinely sorry🥲. Maine phir se apne emotions
+                ko khud par haavi hone diya aur aapse aisi baatein
+                keh di jo mujhe bilkul nahi kehni chahiye thi.
+            </p>
+
+            <p>
+                Sabse zyada bura mujhe iss baat ka lgta h ki jis
+                insaan ko m duniya m sbse zyada khush dkhna chahta hu,
+                kbhi kbhi m hi uski pareshani ki wajah bn jaata hu.
+                And I never want that, jaan.
+            </p>
+
+            <p>
+                I know ki sirf sorry bolne se sb kuch thk nhi ho jaata.
+                Main apne emotions ko justify nhi karna chahta,
+                because no matter how I feel, aapko hurt karna sahi nhi h.
+                I want to learn how to handle my emotions better,
+                taaki difficult moments mein main aapse baat kar sakun
+                instead of saying things I'll regret later🥲🥲.
+            </p>
+
+            <p>
+                Aap jaanti ho na humari story mere liye kitni special h?
+                School m mile, friends bne, best friends bne,
+                aur phir aap meri favourite person ban gayi. 🥹❤️
+                Aapka mujhe hasana, aapki baaton par mera blush karna,
+                aur humari choti choti memories...
+                these things mean the world to me🥹🫂.
+            </p>
+
+            <p>
+                M kbhi nhi chahta ki meri wajah se aap humare
+                relationship mein pareshan ya emotionally exhausted
+                feel karo. I want to be someone jiske saath aap
+                khud ko loved, understood aur safe feel karo.
+            </p>
+
+            <p>
+                I know I'm not perfect, but I genuinely want to
+                become better—not just by saying sorry, but by
+                showing it through my actions.
+            </p>
+
+            <p>
+                Aur haan, aapka jaan ji aapse bhttt pyaar krta h.
+                Although glt time pr glt baatein bolne m apparently
+                PhD kr rkhi h maine. 😭🤡
+            </p>
+
+            <p>
+                But jokes apart, I'm really sorry, meri jaan.
+                You matter to me much more than winning an argument
+                ever could. Main hamesha argument jeetne se zyada
+                aapko samajhna choose karunga, aur kbhi nhi chahta
+                ki mere emotions humare beech aayein.
+            </p>
+
+            <p>
+                I love you, my Landmine. I'm sorry for hurting you,
+                and I want to learn to love you better. ❤️🫂
+            </p>
+
+            <div class="signature">
+                Always yours,<br>
+                Nanha munha baby🥹 💗
+            </div>
+
+        </div>
+
+        <div class="center">
+            <button onclick="showPage('page5')">
+                Come Here, Jaan 🫂
+            </button>
+        </div>
+    </section>
+
+
+    <!-- PAGE 5: THE FINAL HUG -->
+    <section class="page" id="page5">
+        <div class="heart">🫂❤️</div>
+
+        <h1>A Virtual Hug for You</h1>
+
+        <div class="card center">
+
+            <p>
+                Idhar aao, meri jaan. 🥹🫂
+            </p>
+
+            <p>
+                Kaash abhi aapko ek tight si hug de pata
+                aur bina kuch kahe bas aapke paas reh pata.
+            </p>
+
+            <p>
+                I'm sorry for the times I've hurt you.
+                I can't change what happened last night,
+                but I can work on how I handle things from now on.
+            </p>
+
+            <p>
+                Aap mere liye bohot special ho, Landmine.
+                Aur main chahta hoon ki aapko meri love
+                sirf meri baaton mein nahi, mere actions mein bhi dikhe. ❤️
+            </p>
+
+            <h2>I Love You, My Landmine. 💗</h2>
+
+            <button onclick="showPage('page1')">
+                Read It Again ❤️
+            </button>
+
+        </div>
+
+        <p class="small">
+            Made with love, just for you. 🥹💌
+        </p>
+    </section>
+
+</div>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Floating hearts in the background
+function createHeart() {
+    const heart = document.createElement('div');
+
+    heart.className = 'heart-float';
+
+    const hearts = ['❤️', '💗', '💕', '💖', '🩷', '💞'];
+    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (14 + Math.random() * 18) + 'px';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 700);
+</script>
+
+</body>
+</html>
